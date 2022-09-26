@@ -1,0 +1,9 @@
+services:
+  app:
+    build: .
+    container_name: cacx-segmentation
+    command: gunicorn -w 4 -b 0.0.0.0 app:app --reload
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/flask-docker
